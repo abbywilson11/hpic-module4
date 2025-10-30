@@ -3,9 +3,13 @@
 import express, { json } from 'express';
 import cors from 'cors'; //enables requests from frontend to backend
 import path from 'path'; //helps with file and directory paths
+import { fileURLToPath } from "url";
 
 const app = express(); // Create Express app instance
 const PORT = process.env.PORT || 5000;  // use Render's port (or 5000 locally)
+// Fix __dirname manually since ES modules don't have it
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors()); // Allow frontend to talk to backend
 app.use(express.json()); // Parse JSON bodies from requests
