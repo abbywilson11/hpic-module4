@@ -23,6 +23,8 @@ app.get(/.*/, (req, res) => { // /.*/ matches all routes
   res.sendFile(path.join(__dirname1, "../frontend/dist/index.html")); //pull index from dist
 });
 
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+
 // Start server
 app.listen(PORT, () => { //PORT helps connect frontend and backend
   console.log(`✅ Server running on port ${PORT}`); //error handling 
