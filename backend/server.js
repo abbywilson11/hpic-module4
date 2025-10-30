@@ -12,18 +12,18 @@ app.use(express.json()); // Parse JSON bodies from requests
 
 // Example route to test
 app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from backend 👋' });
+  res.json({ message: 'Hello from backend 👋' }); //helped test backend connected to localhost
 });
 
 const __dirname1 = path.resolve();   // get absolute project path
-app.use(express.static(path.join(__dirname1, "../frontend/dist")));
+app.use(express.static(path.join(__dirname1, "../frontend/dist"))); //pull from dist for rendered frontend
 
 // for *any other* route (like /about, /resources), send the React index.html file
 app.get(/.*/, (req, res) => { // /.*/ matches all routes
-  res.sendFile(path.join(__dirname1, "../frontend/dist/index.html"));
+  res.sendFile(path.join(__dirname1, "../frontend/dist/index.html")); //pull index from dist
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+app.listen(PORT, () => { //PORT helps connect frontend and backend
+  console.log(`✅ Server running on port ${PORT}`); //error handling 
 });

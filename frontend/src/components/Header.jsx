@@ -4,7 +4,7 @@
 import React from "react";
 
 // Functional component for header UI
-export default function Header() {
+export default function Header() { //export header 
   return (
     <header className="header">
       {/* Title of the application */}

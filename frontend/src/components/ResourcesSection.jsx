@@ -5,9 +5,9 @@ export default function ResourcesSection() {
   // Static list of your 6 brochures
   const resources = [
     {
-      id: 1,
-      title: "A guide for people with sickle cell disease",
-      link: "/brochures/qs-sickle-cell-disease-patient-guide-en.pdf",
+      id: 1, //specific id
+      title: "A guide for people with sickle cell disease", //title of brochures
+      link: "/brochures/qs-sickle-cell-disease-patient-guide-en.pdf", //link to brochure
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ export default function ResourcesSection() {
   // Render the list of brochures
   return (
     <section className="resources">
-      <h2>Educational Resources</h2>
+      <h2>Educational Resources</h2> {/* Section title */}
       <p>Explore these brochures and guides to learn more about Sickle-Cell Disease:</p>
 
       <div className="resources-list">
@@ -49,7 +49,7 @@ export default function ResourcesSection() {
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <a href={item.link} target="_blank" rel="noopener noreferrer">
-              📄 Voir la Brochure / View Brochure
+              📄 Voir la Brochure / View Brochure {/*button name for user */}
             </a>
           </div>
         ))}

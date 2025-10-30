@@ -9,11 +9,11 @@ export default function App() {
   useEffect(() => {
     // in development, we'll connect to backend running on port 5000
     fetch("http://localhost:5000/api")
-      .then((res) => res.json())
-      .catch((err) => console.error("Error fetching data:", err));
+      .then((res) => res.json()) //parse json
+      .catch((err) => console.error("Error fetching data:", err)); //error handling from chatgpt
    }, []);
       return (
-    <div>
+    <div> {/* order of layout */}
       <Header />
       <Table />
       <ResourcesSection /> 

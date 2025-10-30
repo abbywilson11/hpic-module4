@@ -3,7 +3,7 @@
 
 import React from "react";
 
-export default function Footer() {
+export default function Footer() { //export footer
   return (
     <footer className="footer">
       {/* copyright */}
@@ -12,8 +12,8 @@ export default function Footer() {
       {/* Optional helpful link about sicklecell disease*/}
       <a
         href="https://www.cdc.gov/ncbddd/sicklecell/index.html" /*link to website*/
-        target="_blank"
-        rel="noopener noreferrer"
+        target="_blank" //open in new tab
+        rel="noopener noreferrer" //security for new tab
       >
         Learn more at CDC
       </a>

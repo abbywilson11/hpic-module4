@@ -1,4 +1,4 @@
-// index.js (or main.jsx)
+// index.js
 // Entry point of the HPIC React app
 
 import React from "react";
