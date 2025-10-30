@@ -1,7 +1,9 @@
 import { useState } from "react"
-import "./table.css"
+import "./App.css"
+import React from "react";
 
-function Table() {
+
+function App() {
   const [city, setCity] = useState("") 
   const [hospitals, setHospitals] = useState([]) 
   const [loading, setLoading] = useState(false)
@@ -9,8 +11,9 @@ function Table() {
 
   const API_KEY = "48880ae7bc084367b7342a79560b95c5"
 
-  const handleSearch = async () => {
+  const handleSearch = async () => { //async lets use use await to wait for api responses
     if (!city) return //if city is empty do nothing
+    console.log(`Searching for city: ${city}`)
     setLoading(true) //makes the loading sign show up
     setError("") // clears previous errors before starting the new request
     setHospitals([]) // clears previous reults
@@ -22,23 +25,26 @@ function Table() {
       )
       const geoData = await geoResponse.json()
       // checks in features is empty 
-      if (!geoData.features.length) {
+      if (!geoData.features.length) { //array of locations and tells how many results were found
+        console.log(" City not found")
         setError("City not found")
         setLoading(false)
         return
       }
 
       const { lat, lon } = geoData.features[0].properties // destructures lat an long from first location result
+      console.log(`Found coordinates → lat: ${lat}, lon: ${lon}`)
 
       // looks for hospitals in a 5km radius 
       const placesUrl = `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${lon},${lat},5000&apiKey=${API_KEY}`
 
       const placesResponse = await fetch(placesUrl)
       const placesData = await placesResponse.json()
+      
 
       // filters out the irrelevent places
       const onlyHospitals = placesData.features.filter((f) => {
-        const name = f.properties.name?.toLowerCase() || ""
+        const name = f.properties.name?.toLowerCase() || "" //? checks if it exists || means if name is undefibned use an empty string
         return (
           !name.includes("pharmacy") &&
           !name.includes("veterinary") &&
@@ -47,7 +53,7 @@ function Table() {
           !name.includes("dentist")
         )
       })
-
+      console.log(`Hospitals after filtering: ${onlyHospitals.length}`)
       setHospitals(onlyHospitals)
     } catch (err) { // runs if any error occurs in the try block
       console.error(err)
@@ -103,4 +109,5 @@ function Table() {
   )
 }
 
-export default Table
+export default App
+

@@ -23,7 +23,7 @@
 .search-box button {
   padding: 10px 16px;
   border: none;
-  background-color: #0077ff;
+  background-color: #3949ab;
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -31,7 +31,7 @@
 }
 
 .search-box button:hover {
-  background-color: #005fcc;
+  background-color: #3949ab;
 }
 
 /* Error message */
