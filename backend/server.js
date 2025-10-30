@@ -19,7 +19,7 @@ const __dirname1 = path.resolve();   // get absolute project path
 app.use(express.static(path.join(__dirname1, "../frontend/dist")));
 
 // for *any other* route (like /about, /resources), send the React index.html file
-app.get("*", (req, res) => {
+app.get(/.*/, (req, res) => { // /.*/ matches all routes
   res.sendFile(path.join(__dirname1, "../frontend/dist/index.html"));
 });
 
