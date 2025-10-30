@@ -1,13 +1,13 @@
 // server.js
 // Import required modules
-const express = require('express');
-const cors = require('cors');
+import express, { json } from 'express';
+import cors from 'cors';
 
 const app = express(); // Create Express app instance
 const PORT = 5000; // You can change this if needed
 
 app.use(cors()); // Allow frontend to talk to backend
-app.use(express.json()); // Parse JSON bodies from requests
+app.use(json()); // Parse JSON bodies from requests
 
 // Example route to test
 app.get('/api', (req, res) => {

@@ -1,0 +1,90 @@
+/* General layout */
+.app-container {
+  font-family: "Arial", sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Input + button */
+.search-box {
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 65%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+  background-color: #005fcc;
+}
+
+/* Error message */
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+p {
+  margin-top: 1rem;
+  color: #555;
+}
+/* Make the entire page center its contents */
+body {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
+  min-height: 100vh; /* full viewport height */
+  background-color: #f7f9fc; /* optional: light background */
+  margin: 0; /* remove default spacing */
+}
+
+/* Keep your existing .app-container styles */
+.app-container {
+  font-family: "Arial", sans-serif;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  color: #222;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.resources {
+  padding: 20px;
+  background-color: #f5f7fb;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.resources h2 {
+  color: #1a237e;
+}
+
+.resources-list {
+  display: grid;
+  gap: 15px;
+}
+
+.resource-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.resource-card a {
+  color:#5c6bc0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- HEADER STYLING --- */
+.header {
+  background: linear-gradient(90deg, #5c6bc0, #3949ab);
+  color: rgb(255, 255, 255);
   text-align: center;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header .tagline {
+  font-style: italic;
+  color: white;
+  opacity: 0.9;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Footer container */
+.footer {
+  background: #283593;          /* Deep blue background */
+  text-align: center;           /* Centered text */
+  padding: 20px;                /* Padding inside footer */
+  border-radius: 20px 20px 0 0; /* Rounded top corners */
+  margin-top: 30px;             /* Space from above section */
 }
 
-.card {
-  padding: 2em;
+/* Force text inside footer to white */
+.footer p,
+.footer span {
+  color: #ffffff !important;    /* Override any global styles */
 }
 
-.read-the-docs {
-  color: #888;
+/* Footer links */
+.footer a {
+  color: #bbdefb !important;    /* Light blue links */
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Link hover effect */
+.footer a:hover {
+  text-decoration: underline;
 }
