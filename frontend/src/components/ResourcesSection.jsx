@@ -49,7 +49,7 @@ export default function ResourcesSection() {
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <a href={item.link} target="_blank" rel="noopener noreferrer">
-              📄 View Brochure
+              📄 Voir la Brochure / View Brochure
             </a>
           </div>
         ))}
